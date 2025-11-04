@@ -3,19 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cool Notes - Write and Save Notes Online</title>
-  <meta name="description" content="Cool Notes is a modern, blue-themed website to quickly write, save, and organize your notes online.">
+  <title>Cool Notes - Online Notes App</title>
+  <meta name="description" content="Cool Notes is a modern, easy-to-use online notes app. Add, save, and organize your notes quickly.">
+  <meta name="keywords" content="notes, online notes, productivity, organize notes, Cool Notes">
+  <meta name="author" content="Jacob Ward">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <div class="container">
-    <h1>Cool Notes</h1>
-    <div class="note-input">
-      <input type="text" id="noteText" placeholder="Write your note and press Enter...">
-    </div>
-    <div id="notesContainer"></div>
+    <header>
+      <h1>Cool Notes</h1>
+    </header>
+
+    <main>
+      <div class="note-input">
+        <input type="text" id="noteText" placeholder="Type your note and press Enter..." autofocus>
+      </div>
+      <div class="notes-list" id="notesList">
+        <!-- Notes will appear here -->
+      </div>
+    </main>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const input = document.getElementById("noteText");
+    const notesList = document.getElementById("notesList");
+
+    input.addEventListener("keydown", function(event) {
+      if (event.key === "Enter" && input.value.trim() !== "") {
+        addNote(input.value.trim());
+        input.value = "";
+      }
+    });
+
+    function addNote(text) {
+      const note = document.createElement("div");
+      note.className = "note";
+
+      const timestamp = new Date();
+      const timeString = timestamp.toLocaleString();
+
+      note.innerHTML = `
+        <p class="note-text">${text}</p>
+        <span class="note-time">${timeString}</span>
+        <button class="delete-btn">×</button>
+      `;
+
+      notesList.appendChild(note);
+
+      note.querySelector(".delete-btn").addEventListener("click", () => {
+        notesList.removeChild(note);
+      });
+    }
+  </script>
 </body>
 </html>
