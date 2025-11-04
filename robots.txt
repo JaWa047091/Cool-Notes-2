@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jawa047091.github.io/Cool-Notes-2/sitemap.xml
