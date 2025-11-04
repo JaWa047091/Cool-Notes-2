@@ -1,90 +1,79 @@
-/* General Styles */
+/* style.css */
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f4f8;
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f8ff; /* light blue background */
+  color: #333;
 }
 
 .container {
   max-width: 600px;
-  width: 100%;
-  margin: 50px auto;
-  background: #ffffff;
-  padding: 30px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading */
-h1 {
+header h1 {
   text-align: center;
-  color: #1e90ff;
-  margin-bottom: 25px;
+  color: #1e90ff; /* your favorite blue */
+  margin-bottom: 30px;
+  font-size: 2.5rem;
 }
 
-/* Note input */
 .note-input input {
   width: 100%;
-  padding: 15px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #1e90ff;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
   outline: none;
-  box-sizing: border-box;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .note-input input:focus {
-  border-color: #1e90ff;
-  box-shadow: 0 0 5px rgba(30,144,255,0.5);
+  border-color: #104e8b;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
 }
 
-/* Notes Container */
-#notesContainer {
+.notes-list {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 
-/* Individual Note */
 .note {
-  background: #e6f0ff;
-  padding: 15px;
-  border-radius: 10px;
-  word-wrap: break-word;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #e6f0ff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  word-break: break-word;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.note p {
-  margin: 0;
+.note-text {
   flex: 1;
 }
 
-.note span {
-  font-size: 12px;
+.note-time {
+  font-size: 0.8rem;
   color: #555;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
-/* Delete button */
 .delete-btn {
-  background: #ff4d4f;
-  color: white;
+  background-color: transparent;
   border: none;
-  border-radius: 6px;
-  padding: 5px 10px;
+  color: #ff4500;
+  font-size: 1.2rem;
   cursor: pointer;
-  font-size: 12px;
   margin-left: 10px;
   transition: 0.2s;
 }
 
 .delete-btn:hover {
-  background: #e03b3e;
+  transform: scale(1.2);
 }
